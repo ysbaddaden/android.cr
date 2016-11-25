@@ -1,0 +1,16 @@
+name: android
+version: 0.1.0
+
+authors:
+  - Julien Portalier <ysbaddaden@gmail.com>
+
+description: |
+  Application glue for the Android NDK
+
+# development_dependencies:
+#   minitest:
+#     github: ysbaddaden/minitest.cr
+
+crystal: 0.20.0
+
+license: Apache-2.0
