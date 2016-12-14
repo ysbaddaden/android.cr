@@ -1,6 +1,5 @@
 require "./lib_android/native_window"
 require "./lib_android/native_window_jni"
-require "./lib_jni"
 
 module Android
   class NativeWindow

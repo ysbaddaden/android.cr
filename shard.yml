@@ -7,10 +7,9 @@ authors:
 description: |
   Application glue for the Android NDK
 
-# development_dependencies:
-#   minitest:
-#     github: ysbaddaden/minitest.cr
+dependencies:
+  java:
+    github: ysbaddaden/java
 
 crystal: 0.20.0
-
 license: Apache-2.0

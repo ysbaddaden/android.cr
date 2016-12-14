@@ -1,4 +1,3 @@
-require "./lib_jni"
 require "./lib_android/native_activity.cr"
 require "./lib_android/native_window.cr"
 require "./lib_android/native_window_jni.cr"

@@ -33,7 +33,12 @@ module Android
 
     getter channel
 
+    #@clazz : LibJNI::JObject
+
     protected def initialize(@activity : LibAndroid::NativeActivity*)
+      #env = @activity.value.env
+      #@clazz = env.value.functions.value.newGlobalRef.call(env, @activity.value.clazz)
+
       @channel = Channel::Buffered(Command).new
 
       @activity.value.callbacks.value.onStart = ->(activity : LibAndroid::NativeActivity*) {
@@ -118,33 +123,34 @@ module Android
     end
 
     # Global JavaVM* handle. Valid for the whole program.
-    def java_vm
-      @activity.vm
+    def vm
+      @activity.value.vm
     end
 
-    # NOTE: JNIEnv* handle. Attached and valid from the main thread only!
-    #def jni_env
-    #  @activity.env
-    #end
+    # NOTE: misnamed, it's actually a `jobject` reference to the `android.app.NativeActivity` instance, not a `jclass` reference.
+    def clazz
+      #@clazz
+      @activity.value.clazz
+    end
 
     def internal_data_path
-      @activity.internalDataPath
+      @activity.value.internalDataPath
     end
 
     def external_data_path
-      @activity.externalDataPath
+      @activity.value.externalDataPath
     end
 
     def sdk_version
-      @activity.sdk_version
+      @activity.value.sdk_version
     end
 
     def asset_manager
-      @asset_manager ||= Asset::Manager.new(@activity.asset_manager)
+      @asset_manager ||= Asset::Manager.new(@activity.value.asset_manager)
     end
 
     def obb_path
-      String.new(@activity.obb_path)
+      String.new(@activity.value.obb_path)
     end
 
     def saved_state

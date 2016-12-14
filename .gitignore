@@ -1,0 +1,23 @@
+# crystal artefacts
+bc_flags
+shard.lock
+/lib
+/samples/*/lib
+/samples/*/tmp
+
+# android artefacts
+/samples/*/bin
+/samples/*/gen
+/samples/*/libs
+/samples/*/obj
+/samples/*/proguard-project.txt
+
+# local configuration
+local.properties
+
+# dependencies
+/jni/libevent-*
+/jni/gc-*
+/jni/iconv-*
+/jni/pcre-*
+/obj

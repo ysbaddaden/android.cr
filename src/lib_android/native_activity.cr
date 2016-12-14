@@ -1,4 +1,4 @@
-require "../lib_jni"
+require "java/lib_jni"
 require "./asset_manager"
 require "./input"
 require "./native_window"
@@ -8,7 +8,7 @@ lib LibAndroid
     callbacks : NativeActivityCallbacks*
     vm : LibJNI::JavaVM* # VM global handle
     env : LibJNI::Env* # WARNING: attached to the main thread only!
-    clazz : LibJNI::JObject* # NativeActivity Java object handle
+    clazz : LibJNI::JObject # NativeActivity Java object handle
     internalDataPath : Char*
     externalDataPath : Char*
     sdkVersion : Int32
