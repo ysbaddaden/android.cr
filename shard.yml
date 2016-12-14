@@ -5,11 +5,11 @@ authors:
   - Julien Portalier <ysbaddaden@gmail.com>
 
 description: |
-  Application glue for the Android NDK
+  Create Android applications using Crystal and the NDK.
 
 dependencies:
   java:
-    github: ysbaddaden/java
+    github: ysbaddaden/java.cr
 
 crystal: 0.20.0
 license: Apache-2.0
